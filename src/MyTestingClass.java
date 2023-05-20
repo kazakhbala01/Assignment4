@@ -24,6 +24,7 @@ public class MyTestingClass {
     // This is the main method that tests the hash table class
     public static void main(String[]args){
         MyHashTable<MyTestingClass, Student> table= new MyHashTable<>();
+        MyHashTable<MyTestingClass, Student> table2= new MyHashTable<>();
         Random random=new Random();
 
         // This is a loop that inserts 10000 key-value pairs into the hash table
@@ -34,11 +35,12 @@ public class MyTestingClass {
             Student value=new Student("Student"+i,i%2==0?"male":"female");
             // The key-value pair is inserted into the hash table using the put method
             table.put(key,value);
+            table2.put(key,value);
         }
 
         // This is an array that stores the size of each chain in the hash table using the getBucketSize method
         int[]NumBucket=table.getBucketSize();
-
+        System.out.println(NumBucket[1]);
         // This is a loop that prints out the size of each chain in the hash table
         for (int i = 0; i < NumBucket.length; i++) {
             System.out.println("Bucket "+i+" has: "+NumBucket[i]+" elements");

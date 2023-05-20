@@ -28,7 +28,7 @@ public class MyHashTable<K,V> {
         chainArray=new HashNode[M];
     }
 
-    // This is a helper method that computes the hash value of a given key using the modulo operation
+    // This is a helper method ash value of a given key using the modulo operation
     private int hash(K key){
         return Math.abs(key.hashCode()) % M;
     }
@@ -52,6 +52,11 @@ public class MyHashTable<K,V> {
         newNode.next = chainArray[index];
         chainArray[index] = newNode;
         size++;
+    }
+    public void copy(int j){
+        for (int i = 0; i < M; i++) {
+            HashNode<K, V> node = chainArray[i];
+        }
     }
 
     // This is a method that returns the value associated with a given key in the hash table, or null if the key does not exist
